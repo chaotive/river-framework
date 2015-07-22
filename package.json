@@ -1,5 +1,5 @@
 {
-  "name": "coffeescript-pixi-poc",
+  "name": "river-framework",
   "version": "0.1.0",
   "author": "Leonardo Montenegro <leonardo.montenegro@chaotive.cl>",
   "devDependencies": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/chaotive/coffeescript-pixi-poc.git"
+    "url": "git://github.com/chaotive/river-framework.git"
   },
   "license": "MIT"
 }
