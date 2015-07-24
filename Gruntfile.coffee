@@ -7,7 +7,7 @@ module.exports = (grunt) ->
     browserDependencies: grunt.file.readJSON('project/browserDependencies.json')
     coffee:
       compileJoined:
-        options: bare: true, join: true
+        options: bare: false, join: true
         files:          
           'build/js/<%= pkg.name %>.js': [
             'src/coffee/**/*.coffee'

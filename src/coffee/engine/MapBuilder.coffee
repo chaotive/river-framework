@@ -1,4 +1,6 @@
-class MapBuilder
+class APP.engine.MapBuilder
+  SliceType = APP.walls.SliceType
+
   @WALL_HEIGHTS = [
     256
     224
@@ -11,7 +13,7 @@ class MapBuilder
     @walls = walls
     @createMap()
 
-  createMap: () ->
+  createMap: ->
     @createWallSpan(3, 9, true)
     @createGap(1)
     @createWallSpan(1, 30)

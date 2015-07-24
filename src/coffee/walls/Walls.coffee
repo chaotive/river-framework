@@ -1,10 +1,13 @@
-class Walls extends PIXI.DisplayObjectContainer
+class APP.walls.Walls extends PIXI.DisplayObjectContainer
+  WallSlice = APP.walls.WallSlice
+  SliceType = APP.walls.SliceType
+
   @VIEWPORT_WIDTH = 512
   @VIEWPORT_NUM_SLICES = Math.ceil(Walls.VIEWPORT_WIDTH/WallSlice.WIDTH) + 1
 
   constructor: ->
     super()
-    @pool = new WallSpritesPool()
+    @pool = new APP.walls.WallSpritesPool()
     @createLookupTables()
     @slices = []
     @viewportX = 0
@@ -29,7 +32,7 @@ class Walls extends PIXI.DisplayObjectContainer
         @removeChild(slice.sprite)
         slice.sprite = null
 
-  addNewSlices: () ->
+  addNewSlices: ->
     firstX = -(@viewportX % WallSlice.WIDTH)
     sliceIndex = 0
     for i in [@viewportSliceX...(@viewportSliceX + Walls.VIEWPORT_NUM_SLICES)]
@@ -65,7 +68,7 @@ class Walls extends PIXI.DisplayObjectContainer
     @returnWallSpriteLookup[sliceType].call(@pool, sliceSprite)
 
   addSlice: (sliceType, y) ->
-    slice = new WallSlice(sliceType, y)
+    slice = new APP.walls.WallSlice(sliceType, y)
     @slices.push slice
 
   checkViewportXBounds: (viewportX) ->

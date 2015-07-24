@@ -1,4 +1,4 @@
-class WallSpritesPool
+class APP.walls.WallSpritesPool
   constructor: ->
     @createWindows()
     @createDecorations()
