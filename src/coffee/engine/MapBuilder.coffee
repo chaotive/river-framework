@@ -1,18 +1,16 @@
 class APP.engine.MapBuilder
   SliceType = APP.walls.SliceType
 
-  @WALL_HEIGHTS = [
-    256
-    224
-    192
-    160
-    128
-  ]
+  @WALL_HEIGHTS = [256, 224, 192, 160, 128]
 
+  test = "hola"
   constructor: (walls) ->
+    console.log(test)
+    console.log(SliceType.GAP)
     @walls = walls
-    @createMap()
+    #@createMap()
 
+  ###
   createMap: ->
     @createWallSpan(3, 9, true)
     @createGap(1)
@@ -92,3 +90,4 @@ class APP.engine.MapBuilder
   addWallStep: (heightIndex) ->
     y = MapBuilder.WALL_HEIGHTS[heightIndex]
     @walls.addSlice(SliceType.STEP, y)
+  ###
