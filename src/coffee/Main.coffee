@@ -1,7 +1,8 @@
-window.APP =
+window.APP = {
   background: {}
   engine: {}
   walls: {}
+}
 
 class APP.Main
   @MIN_SCROLL_SPEED = 5

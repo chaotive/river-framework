@@ -1,16 +1,13 @@
 class APP.engine.MapBuilder
-  SliceType = APP.walls.SliceType
-
   @WALL_HEIGHTS = [256, 224, 192, 160, 128]
 
-  test = "hola"
   constructor: (walls) ->
-    console.log(test)
-    console.log(SliceType.GAP)
-    @walls = walls
-    #@createMap()
+    @_SliceType = APP.walls.SliceType
 
-  ###
+    console.log(@_SliceType.GAP)
+    @walls = walls
+    @createMap()
+
   createMap: ->
     @createWallSpan(3, 9, true)
     @createGap(1)
@@ -51,7 +48,7 @@ class APP.engine.MapBuilder
 
   createGap: (spanLength) ->
     for i in [0...spanLength]
-      @walls.addSlice(SliceType.GAP)
+      @walls.addSlice(@_SliceType.GAP)
 
   createWallSpan: (
     heightIndex, spanLength, noFront = false, noBack = false) ->
@@ -75,19 +72,18 @@ class APP.engine.MapBuilder
 
   addWallFront: (heightIndex) ->
     y = MapBuilder.WALL_HEIGHTS[heightIndex]
-    @walls.addSlice(SliceType.FRONT, y)
+    @walls.addSlice(@_SliceType.FRONT, y)
 
   addWallBack: (heightIndex) ->
     y = MapBuilder.WALL_HEIGHTS[heightIndex]
-    @walls.addSlice(SliceType.BACK, y)
+    @walls.addSlice(@_SliceType.BACK, y)
 
   addWallMid: (heightIndex, spanLength) ->
     y = MapBuilder.WALL_HEIGHTS[heightIndex]
     for i in [0...spanLength]
-      if (i % 2 == 0) then @walls.addSlice(SliceType.WINDOW, y)
-      else @walls.addSlice(SliceType.DECORATION, y)
+      if (i % 2 == 0) then @walls.addSlice(@_SliceType.WINDOW, y)
+      else @walls.addSlice(@_SliceType.DECORATION, y)
 
   addWallStep: (heightIndex) ->
     y = MapBuilder.WALL_HEIGHTS[heightIndex]
-    @walls.addSlice(SliceType.STEP, y)
-  ###
+    @walls.addSlice(@_SliceType.STEP, y)
