@@ -1,13 +1,13 @@
-class APP.walls.Walls extends PIXI.DisplayObjectContainer
+class CS.walls.Walls extends PIXI.DisplayObjectContainer
   @VIEWPORT_WIDTH = 512
-  @VIEWPORT_NUM_SLICES = Math.ceil(Walls.VIEWPORT_WIDTH/APP.walls.WallSlice.WIDTH) + 1
+  @VIEWPORT_NUM_SLICES = Math.ceil(Walls.VIEWPORT_WIDTH/CS.walls.WallSlice.WIDTH) + 1
 
   constructor: ->
-    @_WallSlice = APP.walls.WallSlice
-    @_SliceType = APP.walls.SliceType
+    @_WallSlice = CS.walls.WallSlice
+    @_SliceType = CS.walls.SliceType
 
     super()
-    @pool = new APP.walls.WallSpritesPool()
+    @pool = new CS.walls.WallSpritesPool()
     @createLookupTables()
     @slices = []
     @viewportX = 0

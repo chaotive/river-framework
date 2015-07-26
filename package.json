@@ -1,6 +1,6 @@
 {
   "name": "river-framework",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Leonardo Montenegro <leonardo.montenegro@chaotive.cl>",
   "devDependencies": {
     "grunt": "^0.4.5",

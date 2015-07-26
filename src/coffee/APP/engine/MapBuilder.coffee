@@ -1,8 +1,8 @@
-class APP.engine.MapBuilder
+class CS.engine.MapBuilder
   @WALL_HEIGHTS = [256, 224, 192, 160, 128]
 
   constructor: (walls) ->
-    @_SliceType = APP.walls.SliceType
+    @_SliceType = CS.walls.SliceType
 
     console.log(@_SliceType.GAP)
     @walls = walls

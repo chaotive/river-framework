@@ -1,10 +1,10 @@
-window.APP = {
+window.CS = {
   background: {}
   engine: {}
   walls: {}
 }
 
-class APP.Main
+class CS.Main
   @MIN_SCROLL_SPEED = 5
   @MAX_SCROLL_SPEED = 15
   @SCROLL_ACCELERATION = 0.005
@@ -37,7 +37,7 @@ class APP.Main
     loader.load()
 
   spriteSheetLoaded: ->
-    @scroller = new APP.engine.Scroller(@stage);
+    @scroller = new CS.engine.Scroller(@stage);
     requestAnimFrame(@update.bind(this));
 
   borrowWallSprites: (num) ->

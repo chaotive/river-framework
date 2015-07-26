@@ -1,15 +1,15 @@
-class APP.engine.Scroller
+class CS.engine.Scroller
   constructor: (stage) ->
-    @far = new APP.background.Far()
+    @far = new CS.background.Far()
     stage.addChild(@far)
 
-    @mid = new APP.background.Mid()
+    @mid = new CS.background.Mid()
     stage.addChild(@mid)
 
-    @front = new APP.walls.Walls()
+    @front = new CS.walls.Walls()
     stage.addChild(@front)
 
-    @mapBuilder = new APP.engine.MapBuilder(@front)
+    @mapBuilder = new CS.engine.MapBuilder(@front)
 
     @viewportX = 0
 

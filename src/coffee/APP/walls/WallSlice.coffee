@@ -1,4 +1,4 @@
-class APP.walls.WallSlice
+class CS.walls.WallSlice
   @WIDTH = 64
 
   constructor: (type, y) ->

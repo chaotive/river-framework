@@ -1,4 +1,4 @@
-class APP.walls.SliceType
+class CS.walls.SliceType
   @FRONT      = 0
   @BACK       = 1
   @STEP       = 2

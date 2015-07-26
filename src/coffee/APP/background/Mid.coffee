@@ -1,4 +1,4 @@
-class APP.background.Mid extends PIXI.TilingSprite
+class CS.background.Mid extends PIXI.TilingSprite
   @DELTA_X = 0.064
 
   constructor: ->
