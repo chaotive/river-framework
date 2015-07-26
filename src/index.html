@@ -1,19 +1,19 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Parallax Scrolling Demo</title>
+		<title><%= pkg.title %></title>
 		<style>
-		  body { background-color: #000000; }
-		  canvas { background-color: #222222; }
+			body { background-color: #000000; }
+			canvas { background-color: #222222; }
 		</style>
 	</head>
 	<body onload="main = new Main()">
-	  <div align="center">
-		<canvas id="game-canvas" width="512" height="384"></canvas>
-	  </div>
-	  <script src="props.js"></script>
-	  <script src="lib/pixi/pixi-2.2.5.js"></script>
-	  <script src="js/Main.js"></script>
-	  <script src="js/river-framework.js"></script>
+		<div align="center">
+			<canvas id="game-canvas" width="512" height="384"></canvas>
+		</div>
+		<script src="props.js"></script>
+		<script src="lib/pixi/pixi-2.2.5.js"></script>
+		<script src="js/Main.js"></script>
+		<script src="js/<%= pkg.name %>.js"></script>
 	</body>
 </html>

@@ -1,5 +1,7 @@
 module.exports = (grunt) ->
 
+  pkgJson = require("./package.json")
+
   # Project configuration.
   grunt.initConfig(
     # Metadata	
@@ -26,8 +28,10 @@ module.exports = (grunt) ->
         src: ['src/*.json']
         dest: 'build/props.js'
     copy:
-      statics: files:
-          'build/index.html' : ['src/index.html']
+      statics:
+        src: 'src/index.html'
+        dest: 'build/index.html'
+        options: process: (content, srcpath) -> grunt.template.process(content)
       html: files: [
           expand: true
           cwd: 'src/'

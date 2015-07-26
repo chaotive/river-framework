@@ -1,5 +1,6 @@
 {
   "name": "river-framework",
+  "title": "River framework: Parallax Scrolling Demo",
   "version": "0.2.0",
   "author": "Leonardo Montenegro <leonardo.montenegro@chaotive.cl>",
   "devDependencies": {
