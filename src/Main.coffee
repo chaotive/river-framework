@@ -1,3 +1,2 @@
 class Main
-  constructor: ->
-    csGame = new CS.Main()
+  constructor: -> csGame = new CS.Main()

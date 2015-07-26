@@ -11,7 +11,7 @@ module.exports = (grunt) ->
         files:
           'build/js/Main.js': [
             'src/*.coffee'
-          ] # concat then compile into single file
+          ]
       compileJoined:
         options: bare: false, join: true
         files:          
