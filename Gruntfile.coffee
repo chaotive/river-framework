@@ -1,10 +1,6 @@
 module.exports = (grunt) ->
 
-  pkgJson = require("./package.json")
-
-  # Project configuration.
   grunt.initConfig(
-    # Metadata	
     pkg: grunt.file.readJSON('package.json')
     browserDependencies: grunt.file.readJSON('project/browserDependencies.json')
     coffee:
@@ -16,7 +12,7 @@ module.exports = (grunt) ->
           ]
       compileJoined:
         options: bare: false, join: true
-        files:          
+        files:
           'build/js/<%= pkg.name %>.js': [
             'src/coffee/**/*.coffee'
           ] # concat then compile into single file
@@ -33,17 +29,17 @@ module.exports = (grunt) ->
         dest: 'build/index.html'
         options: process: (content, srcpath) -> grunt.template.process(content)
       html: files: [
-          expand: true
-          cwd: 'src/'
-          src: ['html/**/*.html']
-          dest: 'build/'
-        ]
+        expand: true
+        cwd: 'src/'
+        src: ['html/**/*.html']
+        dest: 'build/'
+      ]
       resources: files: [
-          expand: true
-          cwd: 'src/'
-          src: ['resources/**']
-          dest: 'build/'
-        ]
+        expand: true
+        cwd: 'src/'
+        src: ['resources/**']
+        dest: 'build/'
+      ]
       lib: files: [
         expand: true
         src: ['lib/**/*.js']
@@ -62,7 +58,7 @@ module.exports = (grunt) ->
       build: ['browserDependencies', 'coffee', 'json']
       exampleTarget2: ['jshint', 'mocha']
   )
-	
+
   # Load the plugins
   grunt.loadNpmTasks 'grunt-browser-dependencies'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
