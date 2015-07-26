@@ -4,7 +4,6 @@ class CS.engine.MapBuilder
   constructor: (walls) ->
     @_SliceType = CS.walls.SliceType
 
-    console.log(@_SliceType.GAP)
     @walls = walls
     @createMap()
 
